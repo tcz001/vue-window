@@ -1,5 +1,6 @@
 import * as VueWindow from "../../src"
 import Vue, * as vue from 'vue'
+import Demo from "./Demo.vue"
 import Sample1 from "./sample1.vue"
 import Sample2 from "./sample2.vue"
 import Sample3 from "./sample3.vue"
@@ -15,6 +16,7 @@ Vue.use(VueWindow)
 
 window.addEventListener('load', e => {
   const Sample: vue.Component = ({
+    Demo,
     Sample1,
     Sample2,
     Sample3,
