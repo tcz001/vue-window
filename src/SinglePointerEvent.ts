@@ -40,7 +40,9 @@ export class SinglePointerEvent {
     cancel?: (e: SinglePointerEvent) => void, useCapture = false,
   ) {
     const mouse = (e: MouseEvent) => {
-      cb(new SinglePointerEvent(e))
+      if (e.button === 0) {
+        cb(new SinglePointerEvent(e))
+      }
     }
     const touch = (e: TouchEvent) => {
       if (e.touches.length === 1) {
@@ -60,7 +62,9 @@ export class SinglePointerEvent {
 
   static bindMove(target: HTMLElement | Document, cb: (e: SinglePointerEvent) => void, useCapture = false) {
     const mouse = (e: MouseEvent) => {
-      cb(new SinglePointerEvent(e))
+      if (e.button === 0) {
+        cb(new SinglePointerEvent(e))
+      }
     }
     const touch = (e: TouchEvent) => {
       if (e.touches.length === 1) {
@@ -77,7 +81,9 @@ export class SinglePointerEvent {
 
   static bindUp(target: HTMLElement | Document, cb: (e: SinglePointerEvent) => void, useCapture = false) {
     const mouse = (e: MouseEvent) => {
-      cb(new SinglePointerEvent(e))
+      if (e.button === 0) {
+        cb(new SinglePointerEvent(e))
+      }
     }
     const touch = (e: TouchEvent) => {
       if (e.touches.length === 0) {
