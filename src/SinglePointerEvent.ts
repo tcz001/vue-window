@@ -91,9 +91,11 @@ export class SinglePointerEvent {
       }
     }
     target.addEventListener('mouseup', mouse as any, useCapture)
+    target.addEventListener('mouseout', mouse as any, useCapture)
     target.addEventListener('touchend', touch as any, useCapture)
     return () => {
       target.removeEventListener('mouseup', mouse as any, useCapture)
+      target.addEventListener('mouseout', mouse as any, useCapture)
       target.removeEventListener('touchend', touch as any, useCapture)
     }
   }
